@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Python safety check
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  DEP_PATH: requirements.txt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
+
+      - name: Security vulnerabilities scan
+        uses: aufdenpunkt/python-safety-check@master
