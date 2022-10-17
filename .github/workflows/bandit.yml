@@ -41,5 +41,9 @@
 #         name: Security report
 #         path: output/security_report.txt
 
-- name: Bandit security linter
+  name: Bandit security linter
+  on:
+   push:
+     branches: [ "master" ]
+   pull_request:
   uses: tj-actions/bandit@v5.1
