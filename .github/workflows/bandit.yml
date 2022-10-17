@@ -1,4 +1,4 @@
-bandit python scan
+#bandit python scan
 
 name: Security check - Bandit
 
