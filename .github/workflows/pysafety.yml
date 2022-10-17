@@ -1,23 +1,22 @@
-name: 'Python Safety Check'
+name: Python safety check
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
-inputs:
-  safety_args:
-    description: Optional Safety script parameters. (e.g. --ignore=1234 or -i 1234)
-    default: ''
-  scan_requirements_file_only:
-    description: Set true to scan required python packages without installing them.
-    default: 'false'
-    
-branding:
-  icon: 'shield'
-  color: 'green'
-  
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+env:
+  DEP_PATH: src/requirements.txt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
+
+      - name: Security vulnerabilities scan
+        uses: aufdenpunkt/python-safety-check@master
+        with:
+           safety_args: '-i 35015'
+           scan_requirements_file_only: 'true'
