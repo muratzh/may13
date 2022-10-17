@@ -51,3 +51,5 @@ class SimpleSklearnModel:
             predict_fn(self.transformer.transform(input_df)),
             columns=self.output_columns,
         )
+
+    print('test')
