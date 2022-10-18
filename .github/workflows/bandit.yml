@@ -1,3 +1,22 @@
-- name: Bandit Check
-  uses: jpetrucciani/bandit-check@1.7.4
+name: Bandit
+on:
+  pull_request:
+  push:
+    branches:
+      - master #dev, release, etc.
+
+jobs:
+  bandit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 #get fuller history
+      - name: Run Bandit Report
+        uses: libertyy/py3-bandit-check@v2
+      - name: Save Bandit txt Report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
 
