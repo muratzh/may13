@@ -53,3 +53,4 @@ class SimpleSklearnModel:
         )
 
     print('test11')
+    print('test2)
