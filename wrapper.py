@@ -52,5 +52,4 @@ class SimpleSklearnModel:
             columns=self.output_columns,
         )
 
-    print('test11')
-    print('test2)
+
