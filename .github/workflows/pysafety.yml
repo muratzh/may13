@@ -20,3 +20,4 @@ jobs:
         with:
     #       safety_args: '-i 35015'
            scan_requirements_file_only: 'true'
+           ignore_failure: 'true'
