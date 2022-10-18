@@ -1,4 +1,4 @@
-name: Python safety check
+name: Pysafety
 
 on:
   push:
@@ -19,5 +19,4 @@ jobs:
       - name: Security vulnerabilities scan
         uses: aufdenpunkt/python-safety-check@master
         with:
-    #       safety_args: '-i 35015'
            scan_requirements_file_only: 'true'
