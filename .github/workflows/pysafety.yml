@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  DEP_PATH: requirements.txt
+  DEP_PATH: requirements.txt, executor_service/requirements.txt
 
 jobs:
   build:
