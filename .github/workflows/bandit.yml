@@ -1,9 +1,8 @@
 name: Bandit
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
+  schedule: ## schedule the job to run at 12 am daily
+     - cron: '0 0 * * *'
 
 jobs:
   bandit:
